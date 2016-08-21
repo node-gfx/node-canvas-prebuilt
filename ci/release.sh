@@ -7,5 +7,5 @@ FILENAME=$(
 ).tar.gz;
 
 # Zip up the release
-tar -C build -czf $FILENAME Release/
+tar -C canvas/build -czf $FILENAME Release/
 

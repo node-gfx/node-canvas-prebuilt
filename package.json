@@ -1,0 +1,20 @@
+{
+  "name": "canvas-prebuilt",
+  "description": "Prebuilt versions of node-canvas as a drop-in replacement",
+  "version": "1.4.0",
+  "author": "Caleb Hearon <crh0872@gmail.com>",
+  "keywords": [
+    "canvas",
+    "graphic",
+    "graphics",
+    "pixman",
+    "cairo",
+    "image",
+    "images",
+    "pdf"
+  ],
+  "homepage": "https://github.com/chearon/node-canvas-prebuilt",
+  "repository": "git://github.com/chearon/node-canvas-prebuilt.git",
+  "main": "./canvas/lib/canvas.js",
+  "license": "MIT"
+}

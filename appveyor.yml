@@ -1,0 +1,30 @@
+version: 0.0.{build}
+environment:
+  matrix:
+    - nodejs_version: "5"
+os: Visual Studio 2015
+install:
+  - ps: Install-Product node $env:nodejs_version x64
+  # Sets Windows 7.1 SDK env vars.
+  - set "PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin;%PATH%"
+  - npm install -g npm node-gyp
+  - set "PATH=%APPDATA%\npm;%PATH%"
+  - node -v
+  - npm -v
+  - call ci/win/exec_with_msys.bat "ci/win/preinstall.sh"
+  - call ci/win/exec_with_msys.bat "ci/install.sh" "win"
+  - call ci/win/exec_with_msys.bat "ci/win/bundle.sh"
+  - call ci/win/exec_with_msys.bat "ci/release.sh"
+build: off
+artifacts:
+  - path: '*.tar.gz'
+deploy:
+  provider: GitHub
+  force_update: true
+  auth_token:
+    secure: '5F/urq7/aJzMCOkAw8mB7xpuETvGBTn3HPAWFCtLsrx357zlUIKiFWPqxVr5+rC5'
+  artifact: /.*\.tar\.gz$/
+  draft: true
+  on:
+    branch: master
+    appveyor_repo_tag: true

@@ -1,5 +1,5 @@
 # write recurisve dependencies of canvas.node into depends.csv
-./depends -c -oc:depends.csv build/Release/canvas.node
+./depends -c -oc:depends.csv canvas/build/Release/canvas.node
 
 # case-insensitive intersection of 3rd column of depends.csv 
 # and all files ending in .dll in the mingw64 directory
@@ -9,6 +9,6 @@ copies=$(comm -12 \
 );
 
 for dll in $copies; do
-	cp /mingw64/bin/$dll build/Release
+	cp /mingw64/bin/$dll canvas/build/Release
 done;
 
