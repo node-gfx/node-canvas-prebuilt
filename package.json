@@ -13,8 +13,20 @@
     "images",
     "pdf"
   ],
+  "scripts": {
+    "install": "node_modules/.bin/node-pre-gyp install"
+  },
+  "binary": {
+    "module_name": "canvas-prebuilt",
+    "module_path": "build/Release",
+    "host": "https://github.com/chearon/node-canvas-prebuilt/releases/download/",
+    "remote_path": "{version}"
+  },
   "homepage": "https://github.com/chearon/node-canvas-prebuilt",
   "repository": "git://github.com/chearon/node-canvas-prebuilt.git",
   "main": "./canvas/lib/canvas.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-pre-gyp": "^0.6.29"
+  }
 }
