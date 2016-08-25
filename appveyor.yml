@@ -1,7 +1,7 @@
 version: 0.0.{build}
 environment:
   matrix:
-    - nodejs_version: "5"
+    - nodejs_version: "6"
 os: Visual Studio 2015
 install:
   - ps: Install-Product node $env:nodejs_version x64
