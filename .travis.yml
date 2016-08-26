@@ -1,12 +1,23 @@
 language: node_js
 os:
+  - linux
   - osx
 osx_image: xcode8 # has everything we need but cairo
 env:
   - CXX=g++-4.9
 install:
   - npm install -g node-gyp
-  - bash ci/install.sh "osx"
+  - bash ci/install.sh $TRAVIS_OS_NAME
+addons:
+  apt: # for linux only
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libcairo2-dev
+      - libjpeg8-dev
+      - libpango1.0-dev
+      - libgif-dev
+      - g++-4.9
 deploy:
   provider: releases
   skip_cleanup: true
