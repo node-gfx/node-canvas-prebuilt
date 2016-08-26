@@ -2,21 +2,11 @@ language: node_js
 os:
   - osx
 osx_image: xcode8 # has everything we need but cairo
-node_js:
-  - '6'
-  - '5'
-  - '4'
-  - '0.12'
-  - '0.11'
-  - '0.10'
 env:
   - CXX=g++-4.9
 install:
   - npm install -g node-gyp
-  - bash ci/osx/preinstall.sh
   - bash ci/install.sh "osx"
-  - bash ci/osx/bundle.sh
-  - bash ci/release.sh
 deploy:
   provider: releases
   skip_cleanup: true
