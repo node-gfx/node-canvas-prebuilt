@@ -18,9 +18,20 @@ pacman --noconfirm -S \
 
 # create .lib files for vc++
 
+echo "generating lib files for the MSYS2 dlls"
 for lib in $deps; do
-  gendef /mingw64/bin/lib$lib.dll
-  dlltool -d lib$lib.def -l /mingw64/lib/lib$lib.lib
+  gendef /mingw64/bin/lib$lib.dll > /dev/null 2>&1 || {
+    echo "could not find lib$lib.dll, have to skip ";
+    continue;
+  }
+
+  dlltool -d lib$lib.def -l /mingw64/lib/lib$lib.lib > /dev/null 2>&1 || {
+    echo "could not create dll for lib$lib.dll";
+    continue;
+  }
+
+  echo "created lib$lib.lib from lib$lib.dll";
+
   rm lib$lib.def
 done
 
