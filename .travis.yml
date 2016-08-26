@@ -1,0 +1,24 @@
+language: node_js
+os:
+  - osx
+osx_image: xcode8 # has everything we need but cairo
+node_js:
+  - '6'
+env:
+  - CXX=g++-4.9
+install:
+  - npm install -g node-gyp
+  - bash ci/osx/preinstall.sh
+  - bash ci/install.sh "osx"
+  - bash ci/osx/bundle.sh
+  - bash ci/release.sh
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: "Eisn/hzayMLAlgGfSp9bmZI+E/GzobBuND4KeG6Z2WTK48wflN/5atYgSTRdwDzPI+mDcA6TAm6FIxHccbOCb1RObsWyspHpKQ1D0QTAX4KGCYTy74LOQ81p+72DUyDTxlTTM/HtRFf/fcBp+2VJBK6Gpr/eEhMQhaUmHmGQxWkbrAy8artWW75QMh079qyme2Xp9s7R9HE78EY8YxBzB6k4tDd3CJDwbK6UU6nBUT8D7Wz8b+2i2/S6eusRpExh/Raha1O4ZLnxILV6MQd+17VC3Ur4Zw73tDGJhDKS5jt/U5av2uFlE5mMmNbjx8vp8drRSHn5zTBpq+vLIADiWN5gJTfbg3IJoVbv+AsUChhmH8J1bQ4HyqafQQxpGo38tYoaxLgZLzSFwUaYtVMX/fmquCuVZ6PrLrgS4Y57wT0RdZqyHZpF3XW61ArlSvnUocBG1etyeYiFXXuS/VIV4wWPo4zbj0awH0+saUfLq9u4Q08kRO2d7jyw2oa1mSEJos3e5oPFomWZ0tdmO5etf232Y914HdspkJjcY6OegjJEP40L5Ay/1+uRb4V0gfUysg36ze3M/x0YN5gO5/ZN8F1iOes8b51T2y6r6cTh+Xptpy7Gkdfpb9UIid+NRStFy3Vu52TysRhwolllrHXFJNegvNM4kGKSJ82Lny4oQN0="
+  file: canvas-*.tar.gz
+  file_glob: true
+  on:
+    tags: true
+

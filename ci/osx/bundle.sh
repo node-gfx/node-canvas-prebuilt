@@ -1,4 +1,4 @@
-build=node-canvas/build/Release
+build=canvas/build/Release
 
 git clone https://github.com/auriamg/macdylibbundler.git
 cd macdylibbundler
