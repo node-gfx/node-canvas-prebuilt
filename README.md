@@ -1,3 +1,5 @@
+[![NPM version](https://badge.fury.io/js/canvas-prebuilt.svg)](http://badge.fury.io/js/canvas-prebuilt)
+
 This is a drop-in replacement for canvas that does not require any compiling. To use it
 just `npm install canvas-prebuilt` or replace `canvas` with `canvas-prebuilt` in your
 dependencies.
