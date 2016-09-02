@@ -18,7 +18,7 @@
   },
   "binary": {
     "module_name": "canvas-prebuilt",
-    "module_path": "build/Release",
+    "module_path": "canvas/build/Release",
     "host": "https://github.com/chearon/node-canvas-prebuilt/releases/download/",
     "remote_path": "{version}"
   },
