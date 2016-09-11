@@ -20,7 +20,7 @@
     "module_name": "canvas-prebuilt",
     "module_path": "canvas/build/Release",
     "host": "https://github.com/chearon/node-canvas-prebuilt/releases/download/",
-    "remote_path": "{version}"
+    "remote_path": "v{version}"
   },
   "homepage": "https://github.com/chearon/node-canvas-prebuilt",
   "repository": "git://github.com/chearon/node-canvas-prebuilt.git",
