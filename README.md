@@ -12,7 +12,7 @@ be run locally too
 
 Make sure your node version is the most recent to guarantee ABI compatibility
 
-| canvas@1.4.0 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
+| canvas@1.4.0<br>canvas@1.5.0 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
 | ------------ | ------ | ------ | ------ | --------- | --------- |
 | Linux x64    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
 | Windows x64  |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |  
