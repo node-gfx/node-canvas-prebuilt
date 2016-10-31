@@ -16,9 +16,9 @@ deploy:
   provider: GitHub
   force_update: true
   auth_token:
-    secure: '5F/urq7/aJzMCOkAw8mB7xpuETvGBTn3HPAWFCtLsrx357zlUIKiFWPqxVr5+rC5'
+    secure: 'eq7/z2ORCaa716+YFUI9iVfelPjD4hU6ITmMEGlYConcRpdnRuX4eoCJizyZzTXv'
   artifact: /.*\.tar\.gz$/
   draft: true
   on:
-    branch: master
+    branch: arbitrary-release
     appveyor_repo_tag: true

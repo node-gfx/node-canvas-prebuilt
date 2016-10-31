@@ -1,4 +1,4 @@
-NODEJS_VERSIONS="6 5 4 0.12 0.10";
+NODEJS_VERSIONS="6";
 CANVAS_VERSION=$(node -e 'console.log(require("./package.json").version)');
 OS=$1;
 
