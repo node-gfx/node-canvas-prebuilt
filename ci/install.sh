@@ -1,11 +1,16 @@
 NODEJS_VERSIONS="7 6 5 4 0.12 0.10";
-CANVAS_VERSION=$(node -e 'console.log(require("./package.json").version)');
 OS=$1;
+CANVAS_VERSION_TO_BUILD=$2;
+
+if [ "$CANVAS_VERSION_TO_BUILD" = "" ]; then
+  echo "No need to build since a tag wasn't pushed, bye bye now";
+  exit 0;
+fi;
 
 source ci/$OS/preinstall.sh
 
-npm install --ignore-scripts canvas@$CANVAS_VERSION || {
-  echo "could not find node-canvas version $CANVAS_VERSION in NPM";
+npm install --ignore-scripts canvas@$CANVAS_VERSION_TO_BUILD || {
+  echo "could not find node-canvas version $CANVAS_VERSION_TO_BUILD in NPM";
   exit 1;
 }
 

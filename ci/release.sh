@@ -1,8 +1,8 @@
 # Generate the node-gyp formatted filename from the node environment
 FILENAME=$(
   node -e "
-    var p = process, v = p.versions; pkg = require('./package.json');
-    console.log([pkg.name, 'v' + pkg.version, 'node-v' + v.modules, p.platform, p.arch].join('-'));
+    var p = process, v = p.versions, pkg = require('./package.json');
+    console.log([pkg.name, '$CANVAS_VERSION_TO_BUILD', 'node-v' + v.modules, p.platform, p.arch].join('-'));
   "
 ).tar.gz;
 
