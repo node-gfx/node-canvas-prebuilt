@@ -16,7 +16,7 @@ deploy:
   provider: GitHub
   force_update: true
   auth_token:
-    secure: '5F/urq7/aJzMCOkAw8mB7xpuETvGBTn3HPAWFCtLsrx357zlUIKiFWPqxVr5+rC5'
+    secure: 'x3ccwK805jCXZ4pSjZ07uW1zG8HznNiMDyZD0WCHcOz/kQPE9Tl8xt2TWXl+qOpL'
   artifact: /.*\.tar\.gz$/
   draft: true
   on:
