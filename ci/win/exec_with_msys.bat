@@ -1,3 +1,5 @@
+@echo off
+
 rem sets up MSYS environment and invokes the script argument in bash
 
 set WD=C:\msys64\usr\bin\
