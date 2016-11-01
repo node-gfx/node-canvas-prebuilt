@@ -8,7 +8,8 @@ install:
   - set "PATH=%APPDATA%\npm;%PATH%"
   - node -v
   - npm -v
-  - call ci/win/exec_with_msys.bat "ci/install.sh" "win" %APPVEYOR_REPO_TAG_NAME%
+  - ps: $version = cmd /c ci/win/exec_with_msys.bat ci/tag_to_version.sh """%APPVEYOR_REPO_TAG_NAME%"""
+  - ps: cmd /c ci/win/exec_with_msys.bat ci/install.sh win $version
 build: off
 artifacts:
   - path: '*.tar.gz'

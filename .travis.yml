@@ -7,7 +7,8 @@ env:
   - CXX=g++-4.9
 install:
   - npm install -g node-gyp
-  - bash ci/install.sh $TRAVIS_OS_NAME $TRAVIS_TAG
+  - VER=$(ci/tag_to_version.sh "$TRAVIS_TAG")
+  - ci/install.sh $TRAVIS_OS_NAME $VER
 addons:
   apt: # for linux only
     sources:
