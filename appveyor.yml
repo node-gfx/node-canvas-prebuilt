@@ -19,7 +19,6 @@ deploy:
   auth_token:
     secure: 'HYRNnDWBmO6UVu+2woQ7g94rkANFbNwhQZEGY3dRAoCOit7CnoZJwL/oSsZaH2zH'
   artifact: /.*\.tar\.gz$/
-  draft: true
   on:
     branch: master
     appveyor_repo_tag: true
