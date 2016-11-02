@@ -12,14 +12,14 @@ be run locally too
 
 Make sure your node version is the most recent to guarantee ABI compatibility
 
-| canvas@1.4.0<br>canvas@1.5.0<br>canvas@1.6.0 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
-| ------------ | ------ | ------ | ------ | --------- | --------- |
-| Linux x64    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
-| Windows x64  |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |  
-| OSX x64      |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
-| Windows x86  |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
-| Linux x86    |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
-| Linux ARM    |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
+| canvas@1.4.0<br>canvas@1.5.0<br>canvas@1.6.0 | node 7 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
+| ------------ | ------ | ------ | ------ | ------ | --------- | --------- |
+| Linux x64    |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
+| Windows x64  |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
+| OSX x64      |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
+| Windows x86  |   𐄂¹   |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
+| Linux x86    |   𐄂¹   |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
+| Linux ARM    |   𐄂¹   |   𐄂¹   |   𐄂¹   |    𐄂¹  |    𐄂¹     |     𐄂¹    |
 
 ¹I have some ideas on how to get these working with cross-compilation if people request it.
 I plan to add Linux/ARM
