@@ -3,9 +3,8 @@ os:
   - linux
   - osx
 osx_image: xcode8 # has everything we need but cairo
-env:
-  - CXX=g++-4.9
 install:
+  - if [ $TRAVIS_OS_NAME = "linux" ]; then export CXX=g++-4.9; fi
   - npm install -g node-gyp
   - VER=$(ci/tag_to_version.sh "$TRAVIS_TAG")
   - ci/install.sh $TRAVIS_OS_NAME $VER
