@@ -27,10 +27,11 @@ I plan to add Linux/ARM
 # Bundling
 
 The bundling scripts just take a regularly compiled executable (canvas.node in this case)
-and look at which shared libraries it links against. Those libraries are then copied to the release
-directory. Windows will look for DLLs in the same directory by default, OSX hard-codes the
-path to the dylib in executables so you have to recursively update references after the copy,
-and in Linux you simply have to compile canvas.node in such a way that it will look in the
-current directory first (using the rpath linker option).
+and look at which non-system libraries it links against. Those libraries are then copied to the release
+directory and binaries are updated if necessary to refer to them.
 
+The strategies for bundling could be applied to other projects too since they're general:
 
+* On macOS, [macpack](https://github.com/chearon/macpack) is used to search dependencies, filter out non-system ones, and update binary references
+* On Windows, [Dependency Walker](http://www.dependencywalker.com)'s CLI is used to search dependencies. Anything in the MSYS2 folder is considered non-system. Patching is not necessary because Windows looks for dlls in the same folder as the binary
+* On Linux, [pax-utils](https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities) searches dependencies, and everything not in `/lib` is non-system. The custom `binding.gyp` compiles `canvas.node` to look inside its own directory for dependencies
