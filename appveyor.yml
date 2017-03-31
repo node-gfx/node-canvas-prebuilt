@@ -2,23 +2,14 @@ version: 0.0.{build}
 os: Visual Studio 2015
 install:
   - ps: Install-Product node $env:nodejs_version x64
+  - set PREBUILD_SLUG=%APPVEYOR_REPO_NAME%
   # Sets Windows 7.1 SDK env vars.
   - set "PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin;%PATH%"
   - npm install -g npm node-gyp
   - set "PATH=%APPDATA%\npm;%PATH%"
   - node -v
   - npm -v
-  - ps: $version = cmd /c "call ci\win\exec_with_msys.bat ""ci/tag_to_version.sh"" ""$env:APPVEYOR_REPO_TAG_NAME"" 2>&1"
-  - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$version"" 2>&1"
+  - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" 2>&1"
 build: off
 artifacts:
   - path: '*.tar.gz'
-deploy:
-  provider: GitHub
-  force_update: true
-  auth_token:
-    secure: 'HYRNnDWBmO6UVu+2woQ7g94rkANFbNwhQZEGY3dRAoCOit7CnoZJwL/oSsZaH2zH'
-  artifact: /.*\.tar\.gz$/
-  on:
-    branch: master
-    appveyor_repo_tag: true

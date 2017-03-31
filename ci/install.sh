@@ -3,7 +3,9 @@ OS=$1;
 CANVAS_VERSION_TO_BUILD=$2;
 
 if [ "$CANVAS_VERSION_TO_BUILD" = "" ]; then
-  echo "No need to build since a tag wasn't pushed, bye bye now";
+  echo "Can't do anything since you didn't specify which version we're building!";
+  echo "Specify the environment variable NODE_CANVAS_PREBUILD_VERSION in AppVeyor/Travis"
+  echo "Make sure that building pushes is disabled, and that you are executing builds manually."
   exit 0;
 fi;
 
@@ -37,6 +39,10 @@ for ver in $NODEJS_VERSIONS; do
     cd ../../
   fi
 done;
+
+echo "------------ Releasing with release.js ------------"
+source ci/$OS/node_version.sh 7
+node ci/release.js $PREBUILD_VERSION || exit 1;
 
 cd ..
 

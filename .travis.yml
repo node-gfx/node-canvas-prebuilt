@@ -4,10 +4,10 @@ os:
   - osx
 osx_image: xcode8 # has everything we need but cairo
 install:
+  - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
   - if [ $TRAVIS_OS_NAME = "linux" ]; then export CXX=g++-4.9; fi
   - npm install -g node-gyp
-  - VER=$(ci/tag_to_version.sh "$TRAVIS_TAG")
-  - ci/install.sh $TRAVIS_OS_NAME $VER
+  - ci/install.sh $TRAVIS_OS_NAME $PREBUILD_VERSION
 addons:
   apt: # for linux only
     sources:
@@ -18,13 +18,3 @@ addons:
       - libpango1.0-dev
       - libgif-dev
       - g++-4.9
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key:
-    secure: "d5J8iSHiKFKAlIrDzBLltHVNMJo8XkCt+Z+/Pd0Dn+itvUcmsJciYrCHLJm9PLRg558AV6X/JgAJ53eV1ujJcKj4ReOQUiWz+HRdb0uc+nOC3NnUnvupUYfty8ermAkvrXhdgiGBXcDooYcohZ5jUQrYcEQ9KlWXGjZxzUXqhT5LBW7uz3zZmjaF8K0sDau9UU8VH/jUxvIQWcdvSBid4zHG1lqTp4D0iIeE4lpJ42pWWVDbn131HJtHEqg7EUj1iUt1cLMzUV5ZdntrU6R4rTwPkaQfJCVd8VqmwF9Rq1uj1QLExCoaCc+ywh2/oeX2ymEzhoThaewYI3WSlzV/jG/uSlJCmGJH7cqe/sHVGp65VUgqVVF1BsuTv2vY1gIwTfi/Irn16E4wYGIoAIw8LA4AZsjChtH16v+Iif0Sn3ZOYCx0XCqntMBJ4Sr5fXUQASIHqxkfNiNUKKCZKwW36am1SkjM+5XLGeVRcSXWb3/pNUrj92npc3z3VeyMf3weafdtcxUEtx3nKnxGn5xgDjv1i3OZmu3nVv8F27NKIPQMsfhU1y/vRR5CRP2tMrZf+27Svobj9TTkG1/vj3cDD25rZMzAK/ZH8569t32J2R4FQQrBXg1zLnVUZoLTRA0HKauRtMyDdNF7lVVCihtT4nBG2BzGGddlfgThxWAzEbA="
-  file: canvas-*.tar.gz
-  file_glob: true
-  on:
-    tags: true
-
