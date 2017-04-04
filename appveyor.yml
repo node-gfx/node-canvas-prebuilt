@@ -9,7 +9,7 @@ install:
   - set "PATH=%APPDATA%\npm;%PATH%"
   - node -v
   - npm -v
-  - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" 2>&1"
+  - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" ""$env:PREBUILD_CANVAS_VERSION"" 2>&1"
 build: off
 artifacts:
   - path: '*.tar.gz'
