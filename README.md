@@ -10,9 +10,13 @@ be run locally too
 
 # Releases
 
+More detail on the releases below, this won't be relevant to most users.
+
+## Binaries
+
 Make sure your node version is the most recent to guarantee ABI compatibility
 
-| canvas@1.4.0<br>canvas@1.5.0<br>canvas@1.6.0 | node 7 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
+| canvas@1.4.x<br>canvas@1.5.x<br>canvas@1.6.x | node 7 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
 | ------------ | ------ | ------ | ------ | ------ | --------- | --------- |
 | Linux x64    |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
 | Windows x64  |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
@@ -23,6 +27,21 @@ Make sure your node version is the most recent to guarantee ABI compatibility
 
 ¹I have some ideas on how to get these working with cross-compilation if people request it.
 I plan to add Linux/ARM
+
+## Canvas version mapping
+
+I screwed up and had to unpublish a couple of versions so they aren't 1:1 with canvas. If you have the minor or major version fixed it should not matter.
+
+| canvas | canvas-prebuilt |
+| ------ | --------------- |
+| 1.4.0  | 1.4.0           |
+| 1.5.0  | 1.5.0           |
+| 1.6.0  | 1.6.0           |
+| 1.6.1  | 1.6.3           |
+| 1.6.2  | 1.6.4           |
+| 1.6.3  | 1.6.5           |
+| 1.6.4  | 1.6.6           |
+| 1.6.5  | 1.6.7           |
 
 # Bundling
 
