@@ -92,6 +92,7 @@ const uploadAssets = async function (tag) {
   }
 
   files = await readdir('.', '.tar.gz');
+  console.log('Uploading ' + files.length + ' asset' + (files.length === 1 ? '' : 's'));
   buffers = await Promise.all(files.map(readfile));
   toDelete = release.assets.filter(asset => files.indexOf(asset.name) > -1);
 
