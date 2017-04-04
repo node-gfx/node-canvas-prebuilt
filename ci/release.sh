@@ -2,7 +2,7 @@
 FILENAME=$(
   node -e "
     var p = process, v = p.versions, pkg = require('./package.json');
-    console.log([pkg.name, 'v$CANVAS_VERSION_TO_BUILD', 'node-v' + v.modules, p.platform, p.arch].join('-'));
+    console.log([pkg.name, 'v$CANVAS_PREBUILT_VERSION', 'node-v' + v.modules, p.platform, p.arch].join('-'));
   "
 ).tar.gz;
 

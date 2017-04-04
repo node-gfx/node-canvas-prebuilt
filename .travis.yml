@@ -7,7 +7,7 @@ install:
   - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
   - if [ $TRAVIS_OS_NAME = "linux" ]; then export CXX=g++-4.9; fi
   - npm install -g node-gyp
-  - ci/install.sh $TRAVIS_OS_NAME $PREBUILD_VERSION
+  - ci/install.sh $TRAVIS_OS_NAME $PREBUILD_VERSION $PREBUILD_CANVAS_VERSION
 addons:
   apt: # for linux only
     sources:
