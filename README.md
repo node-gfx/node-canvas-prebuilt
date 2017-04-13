@@ -30,18 +30,11 @@ I plan to add Linux/ARM
 
 ## Canvas version mapping
 
-I screwed up and had to unpublish a couple of versions so they aren't 1:1 with canvas. If you have the minor or major version fixed it should not matter.
-
 | canvas | canvas-prebuilt |
 | ------ | --------------- |
 | 1.4.0  | 1.4.0           |
 | 1.5.0  | 1.5.0           |
 | 1.6.0  | 1.6.0           |
-| 1.6.1  | 1.6.3           |
-| 1.6.2  | 1.6.4           |
-| 1.6.3  | 1.6.5           |
-| 1.6.4  | 1.6.6           |
-| 1.6.5  | 1.6.7           |
 
 # Bundling
 
