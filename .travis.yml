@@ -1,20 +1,27 @@
 language: node_js
+sudo: required
+services:
+  - docker
 os:
   - linux
   - osx
 osx_image: xcode8 # has everything we need but cairo
 install:
   - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
-  - if [ $TRAVIS_OS_NAME = "linux" ]; then export CXX=g++-4.9; fi
-  - npm install -g node-gyp
-  - ci/install.sh $TRAVIS_OS_NAME $PREBUILD_VERSION $PREBUILD_CANVAS_VERSION
-addons:
-  apt: # for linux only
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libcairo2-dev
-      - libjpeg8-dev
-      - libpango1.0-dev
-      - libgif-dev
-      - g++-4.9
+  - >- # this should only run on linux
+    if [ $TRAVIS_OS_NAME = "linux" ]; then
+
+    docker run
+    -e PREBUILD_VERSION="$PREBUILD_VERSION"
+    -e PREBUILD_AUTH="$PREBUILD_AUTH"
+    -e PREBUILD_SLUG="$TRAVIS_REPO_SLUG"
+    -v $(pwd):/build chearon/canvas-prebuilt:3
+    bash -c 'cd /build; export NVM_DIR=$HOME/.nvm; . $HOME/.nvm/nvm.sh; . ci/install.sh linux '"\"$PREBUILD_VERSION\" \"$PREBUILD_CANVAS_VERSION\"";
+
+    else
+
+    export PREBUILD_SLUG="$TRAVIS_REPO_SLUG";
+
+    bash ci/install.sh osx "$PREBUILD_VERSION" "$PREBUILD_CANVAS_VERSION";
+
+    fi
