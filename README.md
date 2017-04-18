@@ -4,6 +4,8 @@ This is a drop-in replacement for canvas that does not require any compiling. To
 just `npm install canvas-prebuilt` or replace `canvas` with `canvas-prebuilt` in your
 dependencies.
 
+You will also need to change `require('canvas')` to `require('canvas-prebuilt')`.
+
 The repo is just a set of scripts that downloads a specific node-canvas version, builds it
 and bundles it on all platforms. It's meant to run on Travis and AppVeyor but it can
 be run locally too
