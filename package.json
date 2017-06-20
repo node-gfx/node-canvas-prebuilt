@@ -14,7 +14,7 @@
     "pdf"
   ],
   "scripts": {
-    "install": "node_modules/.bin/node-pre-gyp install",
+    "install": "node-pre-gyp install",
     "test": "echo No test needed"
   },
   "binary": {
