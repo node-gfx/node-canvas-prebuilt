@@ -3,23 +3,26 @@
     {
       'target_name': 'canvas',
       'sources': [
+        'src/backend/Backend.cc',
+        'src/backend/ImageBackend.cc',
+        'src/backend/PdfBackend.cc',
+        'src/backend/SvgBackend.cc',
+        'src/Backends.cc',
         'src/Canvas.cc',
         'src/CanvasGradient.cc',
         'src/CanvasPattern.cc',
         'src/CanvasRenderingContext2d.cc',
+        'src/closure.cc',
         'src/color.cc',
         'src/Image.cc',
         'src/ImageData.cc',
         'src/init.cc',
-        'src/FontFace.cc'
+        'src/register_font.cc',
+        'src/toBuffer.cc'
       ],
       'defines': [
         'HAVE_GIF',
         'HAVE_JPEG',
-        'HAVE_FREETYPE',
-        # can't have pango on windows because strndup() is used
-        # see https://ci.appveyor.com/project/chearon/node-canvas-prebuilt/build/0.0.10
-        #'HAVE_PANGO',
         'HAVE_BOOLEAN', # or jmorecfg.h tries to define it
         '_USE_MATH_DEFINES' # for M_PI
       ],
