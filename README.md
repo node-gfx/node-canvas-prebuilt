@@ -18,7 +18,7 @@ More detail on the releases below, this won't be relevant to most users.
 
 Make sure your node version is the most recent to guarantee ABI compatibility
 
-| canvas@1.4.x<br>canvas@1.5.x<br>canvas@1.6.x<br>canvas@2.0.0-alpha.1 | node 8 | node 7 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
+| canvas@1.4.x<br>canvas@1.5.x<br>canvas@1.6.x<br>canvas@2.0.0-alpha.1<br>canvas@2.0.0-alpha.2 | node 8 | node 7 | node 6 | node 5 | node 4 | node 0.12 | node 0.10 |
 | ------------------ | ------ | ------ | ------ | ------ | ------ | --------- | --------- |
 | Linux x64          |   ✓    |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
 | Windows x64        |   ✓    |   ✓    |   ✓    |   ✓    |    ✓   |    ✓      |     ✓     |
