@@ -30,14 +30,6 @@ Make sure your node version is the most recent to guarantee ABI compatibility
 ¹I have some ideas on how to get these working with cross-compilation if people request it.
 I plan to add Linux/ARM
 
-## Canvas version mapping
-
-| canvas | canvas-prebuilt |
-| ------ | --------------- |
-| 1.4.0  | 1.4.0           |
-| 1.5.0  | 1.5.0           |
-| 1.6.0  | 1.6.0           |
-
 # Bundling
 
 The bundling scripts just take a regularly compiled executable (canvas.node in this case)
