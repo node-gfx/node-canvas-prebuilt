@@ -10,6 +10,17 @@ The repo is just a set of scripts that downloads a specific node-canvas version,
 and bundles it on all platforms. It's meant to run on Travis and AppVeyor but it can
 be run locally too
 
+# Linux technicalities
+
+Linux users will need glibc >= 2.13.1 (Ubuntu 14.04+, Debian 7+, etc)
+
+If you are using fonts, you might see some FontConfig warnings which are harmless:
+
+| Situation | Message | Meaning |
+| --------- | ------- | ------- |
+| You have an old version of FontConfig on your system | **Fontconfig warning: line 142: blank doesn't take any effect anymore. please remove it from your fonts.conf** | You don't need to do anything, but removing said line or upgrading FontConfig on your system should fix it |
+| You don't have FontConfig | **Fontconfig error: Cannot load default config file** | You don't have any fonts on your system, so if you want to use the text APIs you'll either need to install FontConfig or use `Canvas.registerFont` |
+
 # Releases
 
 More detail on the releases below, this won't be relevant to most users.
