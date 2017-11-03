@@ -26,6 +26,8 @@ source ci/$OS/preinstall.sh
 cp ci/$OS/binding.gyp node_modules/canvas/binding.gyp
 
 for ver in $NODEJS_VERSIONS; do 
+  echo "------------ Building with node $ver ------------"
+
   source ci/$OS/node_version.sh $ver;
 
   if [ $? -ne 0 ]; then
@@ -33,7 +35,6 @@ for ver in $NODEJS_VERSIONS; do
     exit 1;
   fi;
 
-  echo "------------ Building with node $ver ------------"
   cd node_modules/canvas
   node-gyp rebuild
 
