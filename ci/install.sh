@@ -50,6 +50,7 @@ done;
 
 echo "------------ Releasing with release.js ------------"
 source ci/$OS/node_version.sh 7
+node -v
 node ci/release.js $PREBUILD_VERSION || exit 1;
 
 cd ..
