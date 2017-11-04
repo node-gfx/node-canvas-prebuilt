@@ -7,5 +7,5 @@ FILENAME=$(
 ).tar.gz;
 
 # Zip up the release
-tar -C node_modules/canvas/build -czf $FILENAME Release/
+tar -C node-canvas/build -czf $FILENAME Release/
 

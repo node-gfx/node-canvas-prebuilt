@@ -10,8 +10,13 @@ if [ "$CANVAS_VERSION_TO_BUILD" = "" ]; then
   exit 0;
 fi;
 
-npm install --ignore-scripts canvas@$CANVAS_VERSION_TO_BUILD || {
+git clone --branch v$CANVAS_VERSION_TO_BUILD --depth 1 https://github.com/Automattic/node-canvas.git || {
   echo "could not find node-canvas version $CANVAS_VERSION_TO_BUILD in NPM";
+  exit 1;
+}
+
+npm install --ignore-scripts || {
+  echo "failed npm install";
   exit 1;
 }
 
@@ -23,7 +28,7 @@ fi;
 
 source ci/$OS/preinstall.sh
 
-cp ci/$OS/binding.gyp node_modules/canvas/binding.gyp
+cp ci/$OS/binding.gyp node-canvas/binding.gyp
 
 for ver in $NODEJS_VERSIONS; do 
   echo "------------ Building with node $ver ------------"
@@ -35,16 +40,16 @@ for ver in $NODEJS_VERSIONS; do
     exit 1;
   fi;
 
-  cd node_modules/canvas
+  cd node-canvas
   node-gyp rebuild
 
   if [ $? -eq 0 ]; then
-    cd ../../
+    cd ..
     source ci/$OS/bundle.sh;
     source ci/release.sh;
   else
     echo "error building in nodejs version $ver"
-    cd ../../
+    cd ..
   fi
 done;
 
