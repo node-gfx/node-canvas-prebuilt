@@ -3,12 +3,12 @@ os: Visual Studio 2017
 install:
   - ps: Install-Product node 8 x64
   - set PREBUILD_SLUG=%APPVEYOR_REPO_NAME%
-  # Sets Windows 7.1 SDK env vars.
-  - set "PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin;%PATH%"
   - npm install -g npm node-gyp
   - set "PATH=%APPDATA%\npm;%PATH%"
+  - set "PYTHON=C:\Python27\python.exe"
   - node -v
   - npm -v
+  - npm config list
   - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" ""$env:PREBUILD_CANVAS_VERSION"" 2>&1"
 build: off
 artifacts:

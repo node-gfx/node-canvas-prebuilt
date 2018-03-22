@@ -41,6 +41,8 @@ for ver in $NODEJS_VERSIONS; do
   fi;
 
   cd node-canvas
+  npm config list
+  env
   node-gyp rebuild
 
   if [ $? -eq 0 ]; then
