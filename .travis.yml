@@ -15,7 +15,7 @@ install:
     -e PREBUILD_VERSION="$PREBUILD_VERSION"
     -e PREBUILD_AUTH="$PREBUILD_AUTH"
     -e PREBUILD_SLUG="$TRAVIS_REPO_SLUG"
-    -v $(pwd):/build chearon/canvas-prebuilt:4
+    -v $(pwd):/build chearon/canvas-prebuilt:5
     bash -c 'cd /build; export NVM_DIR=$HOME/.nvm; . $HOME/.nvm/nvm.sh; . ci/install.sh linux '"\"$PREBUILD_VERSION\" \"$PREBUILD_CANVAS_VERSION\"";
 
     else

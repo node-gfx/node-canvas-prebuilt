@@ -20,3 +20,11 @@ RUN bash -c 'cd; curl -O https://www.freedesktop.org/software/fontconfig/release
 RUN bash -c 'cd; curl -O https://www.cairographics.org/releases/pixman-0.34.0.tar.gz; tar -xvf pixman-0.34.0.tar.gz; cd pixman-0.34.0; ./configure; make; make install'
 RUN bash -c 'cd; curl -O https://www.cairographics.org/releases/cairo-1.14.10.tar.xz; tar -xvf cairo-1.14.10.tar.xz; cd cairo-1.14.10; ./configure; make; make install'
 RUN bash -c 'cd; curl -O http://ftp.gnome.org/pub/GNOME/sources/pango/1.40/pango-1.40.7.tar.xz; tar -xvf pango-1.40.7.tar.xz; cd pango-1.40.7; ./configure; make; make install'
+
+# https://stackoverflow.com/a/29729834/487014
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.WHEEZY
+RUN cat /etc/apt/sources.list.WHEEZY | sed 's/wheezy/jessie/g' > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get -y install gcc-4.9 g++-4.9
+RUN cp /etc/apt/sources.list.WHEEZY /etc/apt/sources.list
+RUN apt-get update
