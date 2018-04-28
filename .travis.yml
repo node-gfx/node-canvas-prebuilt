@@ -5,7 +5,7 @@ services:
 os:
   - linux
   - osx
-osx_image: xcode8 # has everything we need but cairo
+osx_image: xcode9.3
 install:
   - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
   - >- # this should only run on linux
