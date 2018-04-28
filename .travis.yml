@@ -2,7 +2,7 @@ language: node_js
 os:
   - linux
   - osx
-osx_image: xcode8 # has everything we need but cairo
+osx_image: xcode9.3
 install:
   - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
   - if [ $TRAVIS_OS_NAME = "linux" ]; then export CXX=g++-4.9; fi
