@@ -22,7 +22,8 @@
     "module_name": "canvas-prebuilt",
     "module_path": "canvas/build/Release",
     "host": "https://github.com/chearon/node-canvas-prebuilt/releases/download/",
-    "remote_path": "v{version}"
+    "remote_path": "v{version}",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{libc}-{arch}.tar.gz"
   },
   "homepage": "https://github.com/chearon/node-canvas-prebuilt",
   "repository": "git://github.com/chearon/node-canvas-prebuilt.git",
@@ -30,6 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "node-pre-gyp": "^0.6.36",
-    "nan": "^2.4.0"
+    "nan": "^2.4.0",
+    "detect-libc": "^1.0.3"
   }
 }
