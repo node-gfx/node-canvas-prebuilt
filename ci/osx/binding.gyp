@@ -39,7 +39,10 @@
         '<!@(pkg-config libpng --cflags-only-I | sed s/-I//g)',
         '<!@(pkg-config pangocairo --cflags-only-I | sed s/-I//g)',
         '<!@(pkg-config freetype2 --cflags-only-I | sed s/-I//g)'
-      ]
+      ],
+      'xcode_settings': {
+        'GCC_ENABLE_CPP_EXCEPTIONS': 'YES'
+      }
     }
   ]
 }

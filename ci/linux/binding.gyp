@@ -42,7 +42,9 @@
       ],
       'ldflags': [
         '-Wl,-rpath \'-Wl,$$ORIGIN\''
-      ]
+      ],
+      'cflags!': ['-fno-exceptions'],
+      'cflags_cc!': ['-fno-exceptions']
     }
   ]
 }
