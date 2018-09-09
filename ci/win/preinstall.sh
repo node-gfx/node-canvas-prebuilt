@@ -1,6 +1,6 @@
 # expects node, VS, and MSYS environments to be set up already. does everything else.
 
-deps="cairo-2 png16-16 jpeg-8 pango-1.0-0 pangocairo-1.0-0 gobject-2.0-0 glib-2.0-0 turbojpeg-0 gif-7 freetype-6";
+deps="cairo-2 png16-16 jpeg-8 pango-1.0-0 pangocairo-1.0-0 gobject-2.0-0 glib-2.0-0 turbojpeg gif-7 freetype-6";
 
 # install cairo and tools to create .lib
 
