@@ -31,7 +31,7 @@
         'C:/msys64/mingw64/lib/libpangocairo-1.0-0.lib',
         'C:/msys64/mingw64/lib/libgobject-2.0-0.lib',
         'C:/msys64/mingw64/lib/libglib-2.0-0.lib',
-        'C:/msys64/mingw64/lib/libturbojpeg-0.lib',
+        'C:/msys64/mingw64/lib/libturbojpeg.lib',
         'C:/msys64/mingw64/lib/libgif-7.lib',
         'C:/msys64/mingw64/lib/libfreetype-6.lib'
       ],
