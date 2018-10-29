@@ -1,14 +1,23 @@
-[![NPM version](https://badge.fury.io/js/canvas-prebuilt.svg)](http://badge.fury.io/js/canvas-prebuilt)
+**NOTE:** the `canvas-prebuilt` package is deprecated. As of version 2,
+[`canvas`](https://github.com/Automattic/node-canvas) itself bundles prebuilt
+versions from this repo. Install by running
+```
+npm install --save canvas
+```
+…and use `canvas` as usual.
 
-This is a drop-in replacement for canvas that does not require any compiling. To use it
-just `npm install canvas-prebuilt` or replace `canvas` with `canvas-prebuilt` in your
-dependencies.
+# Using `canvas-prebuilt` (deprecated)
 
-You will also need to change `require('canvas')` to `require('canvas-prebuilt')`.
-
-The repo is just a set of scripts that downloads a specific node-canvas version, builds it
+This is a drop-in replacement for `canvas` that does not require any compiling.
+The repo is just a set of scripts that downloads a specific `node-canvas` version, builds it
 and bundles it on all platforms. It's meant to run on Travis and AppVeyor but it can
-be run locally too
+be run locally too.
+
+If you still need to use prebuilt 1.x and 2-alpha versions of `canvas`,
+run `npm install --save canvas-prebuilt`
+or replace `canvas` with `canvas-prebuilt` in your dependencies.
+
+In your code, use `require('canvas-prebuilt')` wherever you would otherwise use `require('canvas')`.
 
 # Linux technicalities
 
