@@ -23,6 +23,7 @@
       'defines': [
         'HAVE_GIF',
         'HAVE_JPEG',
+        'HAVE_RSVG',
         'HAVE_BOOLEAN', # or jmorecfg.h tries to define it
         '_USE_MATH_DEFINES' # for M_PI
       ],
@@ -36,7 +37,8 @@
         'C:/msys64/mingw64/lib/libglib-2.0-0.lib',
         'C:/msys64/mingw64/lib/libturbojpeg.lib',
         'C:/msys64/mingw64/lib/libgif-7.lib',
-        'C:/msys64/mingw64/lib/libfreetype-6.lib'
+        'C:/msys64/mingw64/lib/libfreetype-6.lib',
+        'C:/msys64/mingw64/lib/librsvg-2-2.lib'
       ],
       'include_dirs': [
         '<!(node -e "require(\'nan\')")',
@@ -48,7 +50,9 @@
         'C:/msys64/mingw64/lib/glib-2.0/include',
         'C:/msys64/mingw64/include/pixman-1',
         'C:/msys64/mingw64/include/freetype2',
-        'C:/msys64/mingw64/include/fontconfig'
+        'C:/msys64/mingw64/include/fontconfig',
+        'C:/msys64/mingw64/include/librsvg-2.0',
+        'C:/msys64/mingw64/include/gdk-pixbuf-2.0'
       ],
       'configurations': {
         'Debug': {

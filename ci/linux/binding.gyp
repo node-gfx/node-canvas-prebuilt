@@ -22,7 +22,8 @@
       ],
       'defines': [
         'HAVE_GIF',
-        'HAVE_JPEG'
+        'HAVE_JPEG',
+        'HAVE_RSVG'
       ],
       'libraries': [
         '<!@(pkg-config pixman-1 --libs)',
@@ -30,6 +31,7 @@
         '<!@(pkg-config libpng --libs)',
         '<!@(pkg-config pangocairo --libs)',
         '<!@(pkg-config freetype2 --libs)',
+        '<!@(pkg-config librsvg-2.0 --libs)',
         '-ljpeg',
         '-lgif'
       ],
@@ -38,7 +40,8 @@
         '<!@(pkg-config cairo --cflags-only-I | sed s/-I//g)',
         '<!@(pkg-config libpng --cflags-only-I | sed s/-I//g)',
         '<!@(pkg-config pangocairo --cflags-only-I | sed s/-I//g)',
-        '<!@(pkg-config freetype2 --cflags-only-I | sed s/-I//g)'
+        '<!@(pkg-config freetype2 --cflags-only-I | sed s/-I//g)',
+        '<!@(pkg-config librsvg-2.0 --cflags-only-I | sed s/-I//g)'
       ],
       'ldflags': [
         '-Wl,-rpath \'-Wl,$$ORIGIN\''
