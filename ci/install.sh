@@ -54,7 +54,7 @@ for ver in $NODEJS_VERSIONS; do
 done;
 
 echo "------------ Releasing with release.js ------------"
-source ci/$OS/node_version.sh 7
+source ci/$OS/node_version.sh 11
 node ci/release.js $PREBUILD_VERSION || exit 1;
 
 cd ..
