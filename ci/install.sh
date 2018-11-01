@@ -46,7 +46,7 @@ for ver in $NODEJS_VERSIONS; do
   if [ $? -eq 0 ]; then
     cd ..
     source ci/$OS/bundle.sh;
-    source ci/release.sh;
+    source ci/tarball.sh;
   else
     echo "error building in nodejs version $ver"
     cd ..
