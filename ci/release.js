@@ -21,18 +21,24 @@ const request = (method, host, path, buffer, contentType) => {
     }
   });
 
-  if (buffer != null) {
-    r.setHeader('Content-Type', contentType);
-    r.setHeader('Content-Length', buffer.length);
-    r.write(buffer);
-  }
-
-  r.end();
-
-  console.log(method + ' ' + path);
-
   return new Promise((accept, reject) => {
+    r.on('error', reject);
+
+    if (buffer != null) {
+      r.setHeader('Content-Type', contentType);
+      r.setHeader('Content-Length', buffer.length);
+      r.write(buffer);
+    }
+
+    r.end();
+
+    console.log(method + ' ' + path);
+
     r.on('response', resp => {
+      if (!(resp.statusCode >= 200 && resp.statusCode < 300)) {
+        return reject({error: resp.statusMessage, code: resp.statusCode});
+      }
+
       let s = '';
       resp.on('readable', () => {
         let buf = resp.read();
