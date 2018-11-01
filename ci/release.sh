@@ -7,4 +7,7 @@ FILENAME=$(
 ).tar.gz;
 
 # Zip up the release
-tar -C node-canvas/build -czf $FILENAME Release/
+tar -C node-canvas/build -czf $FILENAME Release/ || {
+  echo "failed to make tarball $FILENAME from node-canvas/build"
+  exit 1;
+}
