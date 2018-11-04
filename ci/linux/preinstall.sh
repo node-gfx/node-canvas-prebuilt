@@ -1,7 +1,6 @@
-# most dependenceis have to be installed in the .travis.yml 
-# since apt-get must be run through the plugin there
+# apt-get-style dependencies aren't done here since the
+# linux build is done on a docker image that has them
 
-# not whitelisted Travis's apt-get plugin so we have to compile ourselves
 git clone git://anongit.gentoo.org/proj/pax-utils.git
 cd pax-utils
 PATH=$PATH:$PWD
