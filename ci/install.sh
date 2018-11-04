@@ -1,7 +1,7 @@
-NODEJS_VERSIONS="11 10 9 8 7 6 5 4";
 OS=$1;
 CANVAS_PREBUILT_VERSION=$2;
 CANVAS_VERSION_TO_BUILD=$3;
+NODEJS_VERSIONS=$4
 
 if [ "$CANVAS_VERSION_TO_BUILD" = "" ]; then
   echo "Can't do anything since you didn't specify which version we're building!";
