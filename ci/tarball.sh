@@ -1,4 +1,5 @@
 # Generate the node-gyp formatted filename from the node environment
+CANVAS_PREBUILT_VERSION=$1
 FILENAME=$(
   node -e "
     var p = process, v = p.versions, pkg = require('./package.json'), libc = require('detect-libc').family || 'unknown';
