@@ -10,6 +10,7 @@ if [ "$CANVAS_VERSION_TO_BUILD" = "" ]; then
   exit 0;
 fi;
 
+rm -rf node-canvas
 git clone --branch v$CANVAS_VERSION_TO_BUILD --depth 1 https://github.com/Automattic/node-canvas.git || {
   echo "could not find node-canvas version $CANVAS_VERSION_TO_BUILD in NPM";
   exit 1;
