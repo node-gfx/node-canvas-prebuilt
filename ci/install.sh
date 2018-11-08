@@ -36,22 +36,23 @@ for ver in $NODEJS_VERSIONS; do
 
   source ci/$OS/node_version.sh $ver;
 
-  if [ $? -ne 0 ]; then
-    echo "could not switch to node $ver";
-    exit 1;
-  fi;
-
   cd node-canvas
-  node-gyp rebuild
 
-  if [ $? -eq 0 ]; then
-    cd ..
-    source ci/$OS/bundle.sh;
-    source ci/tarball.sh $CANVAS_PREBUILT_VERSION;
-  else
+  node-gyp rebuild || {
     echo "error building in nodejs version $ver"
-    cd ..
-  fi
+    exit 1;
+  }
+
+  cd ..
+
+  source ci/$OS/bundle.sh;
+
+  node -e "require('./node-canvas')" || {
+    echo "error loading binary";
+    exit 1;
+  }
+
+  source ci/tarball.sh $CANVAS_PREBUILT_VERSION;
 done;
 
 echo "------------ Releasing with release.js ------------"
