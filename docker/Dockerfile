@@ -16,10 +16,11 @@ RUN bash -c 'cd; curl -LO https://sourceforge.net/projects/freetype/files/freety
 RUN bash -c 'cd; curl -O https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.4.7.tar.bz2; tar -xvf harfbuzz-1.4.7.tar.bz2; cd harfbuzz-1.4.7; ./configure; make; make install'
 RUN bash -c 'cd; curl -O https://cytranet.dl.sourceforge.net/project/expat/expat/2.2.0/expat-2.2.0.tar.bz2; tar -xvf expat-2.2.0.tar.bz2; cd expat-2.2.0; ./configure; make; make install'
 RUN ldconfig
-RUN bash -c 'cd; curl -O https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.12.4.tar.bz2; tar -xvf fontconfig-2.12.4.tar.bz2; cd fontconfig-2.12.4; ./configure --enable-static --sysconfdir=/etc --localstatedir=/var; make; make install'
+RUN bash -c 'cd; curl -O https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.1.tar.bz2; tar -xvf fontconfig-2.13.1.tar.bz2; cd fontconfig-2.13.1; ./configure --enable-static --sysconfdir=/etc --localstatedir=/var; make; make install'
 RUN bash -c 'cd; curl -O https://www.cairographics.org/releases/pixman-0.34.0.tar.gz; tar -xvf pixman-0.34.0.tar.gz; cd pixman-0.34.0; ./configure; make; make install'
 RUN bash -c 'cd; curl -O https://cairographics.org/releases/cairo-1.16.0.tar.xz; tar -xvf cairo-1.16.0.tar.xz; cd cairo-1.16.0; ./configure; make; make install'
-RUN bash -c 'cd; curl -O http://ftp.gnome.org/pub/GNOME/sources/pango/1.40/pango-1.40.7.tar.xz; tar -xvf pango-1.40.7.tar.xz; cd pango-1.40.7; ./configure; make; make install'
+RUN bash -c 'cd; curl -LO https://github.com/fribidi/fribidi/releases/download/v1.0.5/fribidi-1.0.5.tar.bz2; tar -xvf fribidi-1.0.5.tar.bz2; cd fribidi-1.0.5; ./configure; make; make install'
+RUN bash -c 'cd; curl -O http://ftp.gnome.org/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz; tar -xvf pango-1.42.4.tar.xz; cd pango-1.42.4; ./configure; make; make install'
 
 # librsvg
 RUN bash -c 'cd; curl -O https://www.openssl.org/source/openssl-1.1.1.tar.gz; tar -xvf openssl-1.1.1.tar.gz; cd openssl-1.1.1; ./config; make; make install'
