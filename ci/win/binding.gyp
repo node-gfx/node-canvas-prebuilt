@@ -18,8 +18,7 @@
         'src/Image.cc',
         'src/ImageData.cc',
         'src/init.cc',
-        'src/register_font.cc',
-        'src/toBuffer.cc'
+        'src/register_font.cc'
       ],
       'defines': [
         'HAVE_GIF',
