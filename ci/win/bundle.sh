@@ -1,5 +1,8 @@
 # write recurisve dependencies of canvas.node into depends.csv
-./depends -c -oc:depends.csv node-canvas/build/Release/canvas.node
+./depends -c -oc:depends.csv node-canvas/build/Release/canvas.node || {
+  echo "error invoking depends.exe";
+  exit 1;
+}
 
 # case-insensitive intersection of 3rd column of depends.csv 
 # and all files ending in .dll in the mingw64 directory
