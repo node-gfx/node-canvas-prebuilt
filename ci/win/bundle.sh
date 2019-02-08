@@ -1,5 +1,7 @@
 # write recurisve dependencies of canvas.node into depends.csv
-./depends -c -oc:depends.csv node-canvas/build/Release/canvas.node || {
+./depends -c -oc:depends.csv node-canvas/build/Release/canvas.node;
+
+[ -f depends.csv ] || {
   echo "error invoking depends.exe";
   exit 1;
 }
