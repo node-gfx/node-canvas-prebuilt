@@ -8,6 +8,8 @@ install:
   - set "PYTHON=C:\Python27\python.exe"
   - node -v
   - npm -v
+  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syuu"
+  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syuu"
   - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" ""$env:PREBUILD_CANVAS_VERSION"" ""$env:PREBUILD_NODE_VERSIONS"" 2>&1"
 build: off
 artifacts:
