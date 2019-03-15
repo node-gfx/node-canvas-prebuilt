@@ -8,6 +8,7 @@ os:
 osx_image: xcode9.3
 install:
   - export PREBUILD_SLUG=$TRAVIS_REPO_SLUG
+  - export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig" #node-gfx/node-canvas-prebuilt#76
   - >- # this should only run on linux
     if [ $TRAVIS_OS_NAME = "linux" ]; then
 
