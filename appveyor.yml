@@ -8,7 +8,7 @@ install:
   - set "PYTHON=C:\Python27\python.exe"
   - node -v
   - npm -v
-  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Sy pacman"
+  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -R mingw-w64-x86_64-toolchain"
   - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syyuu"
   - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syyuu"
   - ps: cmd /c "call ci\win\exec_with_msys.bat ""ci/install.sh"" win ""$env:PREBUILD_VERSION"" ""$env:PREBUILD_CANVAS_VERSION"" ""$env:PREBUILD_NODE_VERSIONS"" 2>&1"
