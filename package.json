@@ -15,7 +15,6 @@
     "pdf"
   ],
   "scripts": {
-    "install": "node-pre-gyp install",
     "test": "echo No test needed"
   },
   "binary": {
@@ -30,8 +29,7 @@
   "main": "./canvas/index.js",
   "license": "MIT",
   "dependencies": {
-    "node-pre-gyp": "^0.10.0",
-    "nan": "^2.9.2",
+    "nan": "^2.13.2",
     "detect-libc": "^1.0.3"
   }
 }
